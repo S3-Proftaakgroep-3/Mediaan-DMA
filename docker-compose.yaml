@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  web:
+    build:
+      context: web
+      dockerfile: dockerfile
+    container_name: mdma_web
+    restart: always
+    volumes:
+      - ./web:/web
+      - /web/node_modules
+      - /web/.next
+    ports:
+      - 3000:3000
